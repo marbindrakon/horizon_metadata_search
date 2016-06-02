@@ -35,9 +35,9 @@ setup(
     ],
     package_data={
         'metasearchdashboard': [
-            'static/metasearch/js/*',
-            'static/metasearch/scss/*',
-            'templates/metasearch/*.html',
+            'static/metasearchdashboard/js/*',
+            'static/metasearchdashboard/scss/*',
+            'templates/metasearchdashboard/*.html',
             'enabled/*.py'
         ],
         'metasearchdashboard.metafinder': [
