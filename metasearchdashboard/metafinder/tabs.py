@@ -87,13 +87,8 @@ class VolumeTab(PagedTableMixin, tabs.TableTab):
 
     def get_volumes_data(self):
         try:
-            marker, sort_dir = self._get_marker()
-
-            volumes, self._has_more, self._has_prev_data = api.cinder.volume_list_paged(
+            volumes, self._has_more, self._has_prev_data = api.cinder.volume_list(
                 self.request,
-                marker=marker,
-                paginate=True,
-                search_opts=None
             )
 
             return volumes
