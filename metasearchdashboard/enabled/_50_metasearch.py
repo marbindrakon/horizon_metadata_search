@@ -23,5 +23,5 @@ DISABLED = False
 #ADD_PANEL = 'openstack_dashboard.dashboards.metasearch.metafinder.panel.Metafinder'
 
 ADD_INSTALLED_APPS = [
-    'openstack_dashboard.dashboards.metasearch',
+    'metasearchdashboard',
 ]

@@ -29,7 +29,21 @@ with open('test-requirements.txt') as f:
 setup(
     name='horizon_metadata_search',
     version='0.1',
-    packages=['metasearchdashboard', 'metasearchdashboard.metafinder', 'metasearchdashboard.metafinder.api'],
+    packages=[
+        'metasearchdashboard', 'metasearchdashboard.metafinder',
+        'metasearchdashboard.metafinder.api', 'metasearchdashboard.enabled'
+    ],
+    package_data={
+        'metasearchdashboard': [
+            'static/metasearch/js/*',
+            'static/metasearch/scss/*',
+            'templates/metasearch/*.html',
+            'enabled/*.py'
+        ],
+        'metasearchdashboard.metafinder': [
+            'templates/metafinder/*.html'
+        ],
+    },
     install_requires=required,
     license='License :: OSI Approved :: Apache Software License',
     classifiers=[
@@ -51,4 +65,5 @@ setup(
     author_email='michael.rice@rackspace.com',
     description='Metadata search dashboard for Horizon',
     long_description=read('README.rst'),
+    zip_safe=False,
 )
