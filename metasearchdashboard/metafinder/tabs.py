@@ -18,9 +18,9 @@ from horizon import exceptions
 from horizon import tabs
 
 from openstack_dashboard import api
-from openstack_dashboard.dashboards.metasearch.metafinder import tables
+from metasearchdashboard.metafinder import tables
 
-from openstack_dashboard.dashboards.metasearch.metafinder.api import swift_helpers
+from metasearchdashboard.metafinder.api import swift_helpers
 
 
 class PagedTableMixin(object):

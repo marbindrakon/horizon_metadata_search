@@ -17,7 +17,7 @@
 from django.utils.translation import ugettext_lazy as _
 
 import horizon
-from openstack_dashboard.dashboards.metasearch import dashboard
+from metasearchdashboard import dashboard
 
 
 class Metafinder(horizon.Panel):

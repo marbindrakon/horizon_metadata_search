@@ -23,7 +23,7 @@ class Metasearchgroup(horizon.PanelGroup):
 
 class Metasearch(horizon.Dashboard):
     name = _("Metadata Search")
-    slug = "metasearch"
+    slug = "metasearchdashboard"
     panels = (Metasearchgroup,)  # Add your panels here.
     default_panel = 'metafinder'  # Specify the slug of the dashboard's default panel.
 

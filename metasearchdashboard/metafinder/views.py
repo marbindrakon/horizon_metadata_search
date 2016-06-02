@@ -11,7 +11,7 @@
 # under the License.
 
 from horizon import tabs
-from openstack_dashboard.dashboards.metasearch.metafinder import tabs as metadb_tabs
+from metasearchdashboard.metafinder import tabs as metadb_tabs
 
 
 class IndexView(tabs.TabbedTableView):

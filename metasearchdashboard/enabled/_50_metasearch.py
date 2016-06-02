@@ -11,7 +11,7 @@
 #   WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 #   See the License for the specific language governing permissions and
 #   limitations under the License.
-DASHBOARD = 'metasearch'
+DASHBOARD = 'metasearchdashboard'
 # The slug of the panel to be added to HORIZON_CONFIG. Required.
 #PANEL = 'metafinder'
 # The slug of the dashboard the PANEL associated with. Required.
@@ -20,7 +20,7 @@ DASHBOARD = 'metasearch'
 #PANEL_GROUP = 'compute'
 DISABLED = False
 # Python panel class of the PANEL to be added.
-#ADD_PANEL = 'openstack_dashboard.dashboards.metasearch.metafinder.panel.Metafinder'
+#ADD_PANEL = 'metasearchdashboard.metafinder.panel.Metafinder'
 
 ADD_INSTALLED_APPS = [
     'metasearchdashboard',

@@ -12,7 +12,7 @@
 
 from django.conf.urls import url
 
-from openstack_dashboard.dashboards.metasearch.metafinder import views
+from metasearchdashboard.metafinder import views
 
 
 urlpatterns = [
