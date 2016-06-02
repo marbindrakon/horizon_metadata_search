@@ -18,17 +18,17 @@ from django.conf import settings
 
 from openstack_dashboard.dashboards.project.containers import utils
 from openstack_dashboard.dashboards.project.instances.tables import \
-    DeleteInstance, RebootInstance, SoftRebootInstance, \
+    RebootInstance, SoftRebootInstance, \
     TogglePause, ToggleSuspend, ToggleShelve, LaunchLink, LaunchLinkNG, \
     EditInstance, EditInstanceSecurityGroups, CreateSnapshot, ConsoleLink, \
     LogLink, ResizeLink, ConfirmResize, RevertResize, RebuildInstance, \
     DecryptInstancePassword, AssociateIP, SimpleAssociateIP, \
-    SimpleDisassociateIP, UpdateMetadata, UpdateRow, StartInstance, \
+    SimpleDisassociateIP, UpdateRow, StartInstance, \
     StopInstance, LockInstance, UnlockInstance, AttachInterface, \
     DetachInterface, TASK_DISPLAY_NONE, TASK_DISPLAY_CHOICES
 
 from openstack_dashboard.dashboards.project.volumes.volumes.tables import \
-    EditVolume, ExtendVolume, LaunchVolume, LaunchVolumeNG, EditAttachments, \
+    EditVolume, ExtendVolume, LaunchVolume, EditAttachments, \
     CreateBackup, CreateSnapshot, RetypeVolume, UploadToImage, \
     CreateTransfer, DeleteTransfer, DeleteVolume, AcceptTransfer, CreateVolume
 
@@ -107,16 +107,16 @@ class InstancesTable(tables.DataTable):
             launch_actions = (LaunchLink,) + launch_actions
         if getattr(settings, 'LAUNCH_INSTANCE_NG_ENABLED', True):
             launch_actions = (LaunchLinkNG,) + launch_actions
-        table_actions = launch_actions + (MetadataFilterAction, DeleteInstance)
+        table_actions = launch_actions + (MetadataFilterAction,)
         row_actions = (StartInstance, ConfirmResize, RevertResize,
                        CreateSnapshot, SimpleAssociateIP, AssociateIP,
                        SimpleDisassociateIP, AttachInterface,
-                       DetachInterface, EditInstance, UpdateMetadata,
+                       DetachInterface, EditInstance,
                        DecryptInstancePassword, EditInstanceSecurityGroups,
                        ConsoleLink, LogLink, TogglePause, ToggleSuspend,
                        ToggleShelve, ResizeLink, LockInstance, UnlockInstance,
                        SoftRebootInstance, RebootInstance,
-                       StopInstance, RebuildInstance, DeleteInstance)
+                       StopInstance, RebuildInstance)
         pagination_param = 'instance_marker'
         prev_pagination_param = 'prev_instance_marker'
 
@@ -138,8 +138,6 @@ class VolumeTable(tables.DataTable):
         launch_actions = ()
         if getattr(settings, 'LAUNCH_INSTANCE_LEGACY_ENABLED', False):
             launch_actions = (LaunchVolume,) + launch_actions
-        if getattr(settings, 'LAUNCH_INSTANCE_NG_ENABLED', True):
-            launch_actions = (LaunchVolumeNG,) + launch_actions
         row_actions = ((EditVolume, ExtendVolume,) +
                        launch_actions +
                        (EditAttachments, CreateSnapshot, CreateBackup,
