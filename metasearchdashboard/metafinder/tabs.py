@@ -87,7 +87,7 @@ class VolumeTab(PagedTableMixin, tabs.TableTab):
 
     def get_volumes_data(self):
         try:
-            volumes, self._has_more, self._has_prev_data = api.cinder.volume_list(
+            volumes = api.cinder.volume_list(
                 self.request,
             )
 
